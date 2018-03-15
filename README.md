@@ -1,5 +1,5 @@
-Sample code for API V2
-======================
+In the root directory you need to create a file "freshlogin.py", it includes authorization data
 
-Samples of code created by freshdesk
-
+domain = " "
+api_key = " "
+password = "x"
