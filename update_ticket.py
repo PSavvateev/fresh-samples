@@ -16,7 +16,7 @@ ticket = {
   'priority' : 3,
 }
 
-r = requests.put("https://{0}.freshdesk.com/api/v2/tickets/{1}", auth = (api_key, password), headers = headers, data = json.dumps(ticket)
+r = requests.put("https://{0}.freshdesk.com/api/v2/tickets/{1}", auth = (api_key, password), headers = headers, data = json.dumps(ticket))
 
 if r.status_code == 200:
   print ("Request processed successfully, the response is given below")
