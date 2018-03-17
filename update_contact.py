@@ -5,7 +5,7 @@ from freshlogin import domain, api_key, password
 # Id of the contact to be updated
 contact_id = '36005577380'
 
-contact_info = { "priority" : "Super Hero" }
+contact_info = { "name" : "Python", "email" : "89227014589@mail.ru", "mobile" : "89227014589" }
 headers = { "Content-Type" : "application/json" }
 
 r = requests.put("https://{0}.freshdesk.com/api/v2/contacts/{1}".format(domain, contact_id), auth = (api_key, password), data = json.dumps(contact_info), headers = headers)
