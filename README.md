@@ -2,4 +2,9 @@ In the root directory you need to create a file "freshlogin.py", it includes aut
 
 domain = " "\
 api_key = " "\
-password = "x"
+password = "x"\
+\
+**Task Lists**\
+\
+- [ ]Add all supported operations
+- [ ]Add (correct) comments in scripts, include similar examples of curl
