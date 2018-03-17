@@ -1,6 +1,3 @@
-## This script requires "requests": http://docs.python-requests.org/
-## To install: pip install requests
-
 import requests
 import json
 from freshlogin import domain, api_key, password
