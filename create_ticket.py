@@ -1,12 +1,6 @@
-## This script requires "requests": http://docs.python-requests.org/
-## To install: pip install requests
-
 import requests
 import json
-
-api_key = "YOUR_API_KEY"
-domain = "YOUR_DOMAIN"
-password = "x"
+from freshlogin import domain, api_key, password
 
 headers = { 'Content-Type' : 'application/json' }
 
@@ -19,15 +13,13 @@ ticket = {
     'cc_emails' : ['sample_email@domain.com', 'user_email@domain.com']
 }
 
-r = requests.post("https://"+ domain +".freshdesk.com/api/v2/tickets", auth = (api_key, password), headers = headers, data = json.dumps(ticket))
+r = requests.post("https://{0}.freshdesk.com/api/v2/tickets".format(domain), auth = (api_key, password), headers = headers, data = json.dumps(ticket))
 
 if r.status_code == 201:
-  print "Ticket created successfully, the response is given below" + r.content
-  print "Location Header : " + r.headers['Location']
+  print ("Ticket created successfully, the response is given below")
 else:
-  print "Failed to create ticket, errors are displayed below,"
-  response = json.loads(r.content)
-  print response["errors"]
+  print ("Failed to create ticket, errors are displayed below")
+response = json.loads(r.content.decode('utf-8'))
 
-  print "x-request-id : " + r.headers['x-request-id']
-  print "Status Code : " + str(r.status_code)
+t = r.json()
+print(r.json())
