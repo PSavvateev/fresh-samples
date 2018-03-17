@@ -4,6 +4,6 @@ domain = " "\
 api_key = " "\
 password = "x"\
 \
-**Task Lists**\
-- [ ]Add all supported operations
-- [ ]Add (correct) comments in scripts, include similar examples of curl
+**Task Lists**
+- Add all supported operations
+- Add (correct) comments in scripts, include similar examples of curl
