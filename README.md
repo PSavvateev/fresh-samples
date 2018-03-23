@@ -2,4 +2,4 @@ In the root directory you need to create a file "freshlogin.py", it includes aut
 
 domain = " "\
 api_key = " "\
-password = "x"\
+password = "x"
