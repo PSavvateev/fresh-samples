@@ -1,6 +1,7 @@
 import requests
 import json
 from freshlogin import domain, api_key, password
+from get_companies import companies
 
 # Return the tickets that are new or opend & assigned to you
 # If you want to fetch all tickets remove the filter query param
@@ -12,5 +13,8 @@ else:
   print ("Failed to read ticket, errors are displayed below")
 response = json.loads(r.content.decode('utf-8'))
 
-t = r.json()
-print(r.json())
+tickets = r.json()
+
+for item in tickets:
+  print(item)
+  print()
