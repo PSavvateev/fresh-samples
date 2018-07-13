@@ -13,5 +13,7 @@ else:
   print ("Failed to read ticket, errors are displayed below")
 response = json.loads(r.content.decode('utf-8'))
 
-t = r.json()
-print(r.json())
+companies = r.json()
+
+for item in companies:
+  print(item['id'], item['name'], item['description'], item['note'])
