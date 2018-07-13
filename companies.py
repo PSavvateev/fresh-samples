@@ -11,15 +11,20 @@ class Companies:
     headers = { "Content-Type" : "application/json" }
 
     def get():
-        r = requests.get("{0}companies".format(domain), auth = (api_key, password))
+        r = requests.get("{0}companies/{1}".format(domain, Companies.id), auth = (api_key, password))
 
         companies = r.json()
 
-        for item in companies:
-            print(item['id'], item['name'], item['description'], item['note'])
+        print(companies)
 
-    def create():
+        #for item in companies:
+        #    print(item['id'], item['name'], item['description'], item['note'])
+
+    def post():
         r = requests.post("{0}companies".format(domain), auth = (api_key, password), data = json.dumps(Companies.info), headers = Companies.headers)
 
-    def updated():
+    def put():
         r = requests.put("{0}companies/{1}".format(domain, Companies.id), auth = (api_key, password), data = json.dumps(Companies.info), headers = Companies.headers)
+
+    def delete():
+        r = requests.delete("{0}companies/{1}".format(domain, Companies.id), auth = (api_key, password))
